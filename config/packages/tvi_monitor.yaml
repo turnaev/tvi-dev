@@ -1,0 +1,406 @@
+tvi_monitor:
+  checks:
+
+    pdo_check:
+      check:
+        dsn: "mysql:host=localhost;dbname=testdb"
+        username: "username"
+        password: "password"
+        #timeout: 1
+
+    pdo_check(s):
+      items:
+        a:
+          check:
+            dsn: "mysql:host=localhost;dbname=testdb"
+            username: "username"
+            password: "password"
+            timeout: 1
+        b:
+          check:
+            dsn: "mysql:host=localhost;dbname=testdb"
+            username: "username"
+            password: "password"
+            timeout: 1
+
+    dir_readable:
+      check:
+        path: '/'
+
+    dir_readable(s):
+      items:
+        a:
+          check:
+            path: '/'
+        b:
+          check:
+            path: ['/', '/tmp']
+
+    dir_writable:
+      check:
+        path: '/'
+
+    dir_writable(s):
+      items:
+        a:
+          check:
+            path: '/'
+        b:
+          check:
+            path: ['/', '/tmp']
+
+    disk_free:
+      check:
+        size: 10000
+        #path:  "/"
+
+    disk_free(s):
+      items:
+        a:
+          check:
+            size: 10000
+        b:
+          check:
+            size: 10000
+            path: "/tmp"
+
+    disk_usage:
+      check:
+      #warningThreshold:  default 70
+      #criticalThreshold:  default 80
+      #path: default /
+
+    disk_usage(s):
+      items:
+        a:
+          check:
+            warningThreshold: 90 # default 70
+            criticalThreshold: 95 # default 80
+            path: /tmp
+        b:
+          check:
+            warningThreshold: 60 # default 70
+            criticalThreshold: 95 # default 80
+            path: /
+
+    ini_file:
+      check:
+        files: ['/tmp/test.ini']
+
+    ini_file(s):
+      items:
+        a:
+          check:
+            files: '/tmp/test.ini'
+        b:
+          check:
+            files: ['/tmp/test.ini']
+
+    json_file:
+      check:
+        files: '/tmp/test.json'
+
+    json_file(s):
+      items:
+        a:
+          check:
+            files: '/tmp/test.json'
+        b:
+          check:
+            files: ['/tmp/test.json']
+
+    xml_file:
+      check:
+        files: '/tmp/test.xml'
+
+    xml_file(s):
+      items:
+        a:
+          check:
+            files: '/tmp/test.xml'
+        b:
+          check:
+            files: ['/tmp/test.xml']
+
+    yaml_file:
+      check:
+        files: '/tmp/test.yml'
+
+    yaml_file(s):
+      items:
+        a:
+          check:
+            files: '/tmp/test.yml'
+        b:
+          check:
+            files: ['/tmp/test.yml']
+
+    guzzle_http_service:
+      check:
+        requestOrUrl: "google.com"
+
+    guzzle_http_service(s):
+      items:
+        a:
+          check:
+            requestOrUrl: "google.com"
+        b:
+          check:
+            requestOrUrl: "google.com"
+
+    http_service:
+      check:
+        host: "google.com"
+        #port: 80
+        #path: "/"
+        #statusCode: ~
+        #content: null
+
+    http_service(s):
+      items:
+        a:
+          check:
+            host: "google.com"
+
+    memcache:
+      check:
+      #host: default '127.0.0.1'
+      #port: default 11211
+
+    memcache(s):
+      items:
+        a:
+          check:
+            host: '127.0.0.1'
+            port: 11211
+        b:
+          check:
+            host: 'localhost'
+            port: 11211
+
+    memcached:
+      check:
+      #host: default '127.0.0.1'
+      #port: default 11211
+
+    memcached(s):
+      items:
+        a:
+          check:
+            host: '127.0.0.1'
+            port: 11211
+        b:
+          check:
+            host: 'localhost'
+            port: 11211
+
+    mongo:
+      check:
+        connectionUri:  default 'mongodb://127.0.0.1/'
+
+    mongo(s):
+      items:
+        a:
+          check:
+            connectionUri: 'mongodb://127.0.0.1/'
+        b:
+          check:
+            connectionUri: 'mongodb://localhost/'
+
+    apc_fragmentation:
+      check:
+      #warningThreshold: 70
+      #criticalThreshold: 90
+
+    apc_fragmentation(s):
+      items:
+        a:
+          check:
+            warningThreshold: 70
+            criticalThreshold: 90
+        b:
+          check:
+            warningThreshold: 70
+            criticalThreshold: 90
+
+    apc_memory:
+      check:
+        warningThreshold: 70
+        criticalThreshold: 90
+
+    apc_memory(s):
+      items:
+        a:
+          check:
+            warningThreshold: 70
+            criticalThreshold: 90
+        b:
+          check:
+            warningThreshold: 70
+            criticalThreshold: 90
+
+    class_exists:
+      check:
+        classNames: ['\Tvi\MonitorBundle\Check\ClassExists\Check']
+        autoload: true
+
+    class_exists(s):
+      items:
+        a:
+          check:
+            classNames: '\Tvi\MonitorBundle\Check\ClassExists\Check'
+            autoload: false
+        b:
+          check:
+            classNames: ['\Tvi\MonitorBundle\Check\ClassExists\Check']
+
+    extension_loaded:
+      check:
+        extensionName: ['apc']
+
+    extension_loaded(s):
+      items:
+        a:
+          check:
+            extensionName: ['apc']
+        b:
+          check:
+            extensionName: 'apc'
+
+    extension_not_loaded:
+      check:
+        extensionName: ["xdebug"]
+
+    extension_not_loaded(s):
+      items:
+        a:
+          check:
+            extensionName: ["xdebug"]
+        b:
+          check:
+            extensionName: "xdebug"
+
+    op_cache_memory:
+      check:
+      #warningThreshold: 70
+      #criticalThreshold: 90
+
+    op_cache_memory(s):
+      items:
+        a:
+          check:
+            warningThreshold: 70
+            criticalThreshold: 90
+        b:
+          check:
+            warningThreshold: 70
+            criticalThreshold: 90
+
+    php_flag:
+      check:
+        settingName: ["session.use_only_cookies"]
+        expectedValue: true
+
+    php_flag(s):
+      items:
+        a:
+          check:
+            settingName: "session.use_only_cookies"
+            expectedValue: true
+        b:
+          check:
+            settingName: ["session.use_only_cookies"]
+            expectedValue: true
+
+    php_version:
+      check:
+        expectedVersion: "7.0"
+        operator: ">="
+
+    php_version(s):
+      items:
+        a:
+          check:
+            expectedVersion: "7.0"
+            operator: ">="
+        b:
+          check:
+            expectedVersion: "7.0"
+
+    security_advisory:
+      check:
+        lockFilePath: "../../../../composer.lock"
+
+    security_advisory(s):
+      items:
+        a:
+          check:
+            lockFilePath: "../../../../composer.lock"
+        b:
+          check:
+            lockFilePath: "../../../../composer.lock"
+
+    stream_wrapper_exists:
+      check:
+        wrappers: ["zlib", "bzip2", "zip"]
+
+    stream_wrapper_exists(s):
+      items:
+        a:
+          check:
+            wrappers: ["zlib"]
+        b:
+          check:
+            wrappers: "zlib"
+
+    rabbit_mq:
+      check:
+      #host: 'localhost'
+      #port: 5672
+      #user: 'guest'
+      #password: 'guest'
+      #vhost: '/'
+
+    rabbit_mq(s):
+      items:
+        a:
+          check:
+        b:
+          check:
+
+    redis:
+      check:
+      #host: default 'localhost'
+      #port: default 6379
+      #auth:  default null
+
+    redis(s):
+      items:
+        a:
+          check:
+        b:
+          check:
+
+    cpu_performance:
+      check:
+
+    cpu_performance(s):
+      items:
+        a:
+          check:
+            minPerformance: 1
+        b:
+          check:
+
+    process_running:
+      check:
+        processNameOrPid: "Php"
+
+    process_running(s):
+      items:
+        a:
+          check:
+            processNameOrPid: "nginx"
+        b:
+          check:
+            processNameOrPid: 1

@@ -1172,16 +1172,16 @@
         },
         {
             "name": "egulias/email-validator",
-            "version": "2.1.5",
+            "version": "2.1.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/egulias/EmailValidator.git",
-                "reference": "54859fabea8b3beecbb1a282888d5c990036b9e3"
+                "reference": "0578b32b30b22de3e8664f797cf846fc9246f786"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/egulias/EmailValidator/zipball/54859fabea8b3beecbb1a282888d5c990036b9e3",
-                "reference": "54859fabea8b3beecbb1a282888d5c990036b9e3",
+                "url": "https://api.github.com/repos/egulias/EmailValidator/zipball/0578b32b30b22de3e8664f797cf846fc9246f786",
+                "reference": "0578b32b30b22de3e8664f797cf846fc9246f786",
                 "shasum": ""
             },
             "require": {
@@ -1225,7 +1225,7 @@
                 "validation",
                 "validator"
             ],
-            "time": "2018-08-16T20:49:45+00:00"
+            "time": "2018-09-25T20:47:26+00:00"
         },
         {
             "name": "fig/link-util",
@@ -1460,16 +1460,16 @@
         },
         {
             "name": "ocramius/proxy-manager",
-            "version": "2.2.1",
+            "version": "2.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Ocramius/ProxyManager.git",
-                "reference": "306da837ddf12aa5a85a8ca343587ec822802ac3"
+                "reference": "14b137b06b0f911944132df9d51e445a35920ab1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Ocramius/ProxyManager/zipball/306da837ddf12aa5a85a8ca343587ec822802ac3",
-                "reference": "306da837ddf12aa5a85a8ca343587ec822802ac3",
+                "url": "https://api.github.com/repos/Ocramius/ProxyManager/zipball/14b137b06b0f911944132df9d51e445a35920ab1",
+                "reference": "14b137b06b0f911944132df9d51e445a35920ab1",
                 "shasum": ""
             },
             "require": {
@@ -1526,7 +1526,7 @@
                 "proxy pattern",
                 "service proxies"
             ],
-            "time": "2018-08-26T15:07:25+00:00"
+            "time": "2018-09-27T13:45:01+00:00"
         },
         {
             "name": "phpdocumentor/reflection-common",
@@ -4624,17 +4624,18 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/turnaev/monitor-bundle.git",
-                "reference": "7be693cf33cb4ff98639a5bbf3aa80f5823db75d"
+                "reference": "1bbe047891ca6d94cd085e2d3339c5273812dd10"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/turnaev/monitor-bundle/zipball/7be693cf33cb4ff98639a5bbf3aa80f5823db75d",
-                "reference": "7be693cf33cb4ff98639a5bbf3aa80f5823db75d",
+                "url": "https://api.github.com/repos/turnaev/monitor-bundle/zipball/1bbe047891ca6d94cd085e2d3339c5273812dd10",
+                "reference": "1bbe047891ca6d94cd085e2d3339c5273812dd10",
                 "shasum": ""
             },
             "require": {
                 "php": "^7.0",
                 "symfony/framework-bundle": "~2.8|~3.1|^4.0",
+                "symfony/twig-bundle": "*",
                 "zendframework/zenddiagnostics": "*"
             },
             "require-dev": {
@@ -4649,7 +4650,6 @@
                 "symfony/browser-kit": "^3.1|^4.0",
                 "symfony/expression-language": "~3.1|^4.0",
                 "symfony/templating": "^3.1|^4.0",
-                "symfony/twig-bundle": "^3.1|^4.0",
                 "symfony/var-dumper": "*"
             },
             "suggest": {
@@ -4686,7 +4686,7 @@
                 "monitor",
                 "monitoring"
             ],
-            "time": "2018-09-24T08:29:09+00:00"
+            "time": "2018-09-28T10:49:16+00:00"
         },
         {
             "name": "twig/twig",
