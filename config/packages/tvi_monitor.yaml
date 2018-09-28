@@ -394,7 +394,7 @@ tvi_monitor:
 
     process_running:
       check:
-        processNameOrPid: "Php"
+        processNameOrPid: "php"
 
     process_running(s):
       items:
