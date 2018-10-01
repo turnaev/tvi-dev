@@ -4995,12 +4995,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/turnaev/monitor-bundle.git",
-                "reference": "1bbe047891ca6d94cd085e2d3339c5273812dd10"
+                "reference": "c0b1edf9a6fc07b4b24c727811adbf9ebd83a7bc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/turnaev/monitor-bundle/zipball/1bbe047891ca6d94cd085e2d3339c5273812dd10",
-                "reference": "1bbe047891ca6d94cd085e2d3339c5273812dd10",
+                "url": "https://api.github.com/repos/turnaev/monitor-bundle/zipball/c0b1edf9a6fc07b4b24c727811adbf9ebd83a7bc",
+                "reference": "c0b1edf9a6fc07b4b24c727811adbf9ebd83a7bc",
                 "shasum": ""
             },
             "require": {
@@ -5024,9 +5024,10 @@
                 "symfony/var-dumper": "*"
             },
             "suggest": {
-                "sensio/distribution-bundle": "To be able to use the composer ScriptHandler",
+                "guzzlehttp/guzzle": "To use http checks",
+                "sensiolabs/security-checker": "To use  ?",
                 "symfony/expression-language": "To use the Expression check",
-                "textalk/websocket": "To use the Websocket check"
+                "textalk/websocket": "To use Websocket checks"
             },
             "type": "symfony-plugin",
             "extra": {
@@ -5057,7 +5058,7 @@
                 "monitor",
                 "monitoring"
             ],
-            "time": "2018-09-28T10:49:16+00:00"
+            "time": "2018-09-28T12:44:12+00:00"
         },
         {
             "name": "twig/twig",
