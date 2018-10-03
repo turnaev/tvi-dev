@@ -26,6 +26,7 @@
         "tvi/monitor-bundle": "dev-master",
         "sensiolabs/security-checker": "*",
         "symfony/expression-language": "*",
+        "predis/predis":               "~1",
         "textalk/websocket" :          "*",
         "guzzlehttp/guzzle":           "*"
     },

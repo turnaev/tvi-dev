@@ -7,7 +7,10 @@ tvi_monitor:
         username: "username"
         password: "password"
         #timeout: 1
-
+      tags:
+        - db
+        - db1
+        - db3
     pdo_check(s):
       items:
         a:
@@ -16,16 +19,24 @@ tvi_monitor:
             username: "username"
             password: "password"
             timeout: 1
+          tags:
+            - db
+            - db1
         b:
           check:
             dsn: "mysql:host=localhost;dbname=testdb"
             username: "username"
             password: "password"
             timeout: 1
+          tags:
+            - db
+            - db3
 
     dir_readable:
       check:
         path: '/'
+      tags:
+        - test
 
     dir_readable(s):
       items:
