@@ -339,10 +339,12 @@ tvi_monitor:
             expectedVersion: "7.0"
 
     security_advisory:
+      tags: ["security"]
       check:
-        lockFilePath: "../../../../composer.lock"
+        lockFilePath: "%kernel.root_dir%/../composer.lock"
 
     security_advisory(s):
+      tags: ["security"]
       items:
         a:
           check:
