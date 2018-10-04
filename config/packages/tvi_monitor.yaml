@@ -1,7 +1,7 @@
 tvi_monitor:
   checks:
 
-    pdo_check:
+    core:pdo_check:
       check:
         dsn: "mysql:host=localhost;dbname=testdb"
         username: "username"
@@ -11,9 +11,10 @@ tvi_monitor:
         - db
         - db1
         - db3
-    pdo_check(s):
+    core:pdo_check(s):
       items:
-        a:
+        #a:
+        -
           check:
             dsn: "mysql:host=localhost;dbname=testdb"
             username: "username"
@@ -22,7 +23,8 @@ tvi_monitor:
           tags:
             - db
             - db1
-        b:
+        #b:
+        -
           check:
             dsn: "mysql:host=localhost;dbname=testdb"
             username: "username"
@@ -32,13 +34,13 @@ tvi_monitor:
             - db
             - db3
 
-    dir_readable:
+    core:dir_readable:
       check:
         path: '/'
       tags:
         - test
 
-    dir_readable(s):
+    core:dir_readable(s):
       items:
         a:
           check:
@@ -47,11 +49,11 @@ tvi_monitor:
           check:
             path: ['/', '/tmp']
 
-    dir_writable:
+    core:dir_writable:
       check:
         path: '/'
 
-    dir_writable(s):
+    core:dir_writable(s):
       items:
         a:
           check:
@@ -60,12 +62,12 @@ tvi_monitor:
           check:
             path: ['/', '/tmp']
 
-    disk_free:
+    core:disk_free:
       check:
         size: 10000
         #path:  "/"
 
-    disk_free(s):
+    core:disk_free(s):
       items:
         a:
           check:
@@ -75,13 +77,13 @@ tvi_monitor:
             size: 10000
             path: "/tmp"
 
-    disk_usage:
+    core:disk_usage:
       check:
       #warningThreshold:  default 70
       #criticalThreshold:  default 80
       #path: default /
 
-    disk_usage(s):
+    core:disk_usage(s):
       items:
         a:
           check:
@@ -94,326 +96,325 @@ tvi_monitor:
             criticalThreshold: 95 # default 80
             path: /
 
-    ini_file:
+    core:ini_file:
       check:
         files: ['/tmp/test.ini']
 
-    ini_file(s):
-      items:
-        a:
-          check:
-            files: '/tmp/test.ini'
-        b:
-          check:
-            files: ['/tmp/test.ini']
-
-    json_file:
-      check:
-        files: '/tmp/test.json'
-
-    json_file(s):
-      items:
-        a:
-          check:
-            files: '/tmp/test.json'
-        b:
-          check:
-            files: ['/tmp/test.json']
-
-    xml_file:
-      check:
-        files: '/tmp/test.xml'
-
-    xml_file(s):
-      items:
-        a:
-          check:
-            files: '/tmp/test.xml'
-        b:
-          check:
-            files: ['/tmp/test.xml']
-
-    yaml_file:
-      check:
-        files: '/tmp/test.yml'
-
-    yaml_file(s):
-      items:
-        a:
-          check:
-            files: '/tmp/test.yml'
-        b:
-          check:
-            files: ['/tmp/test.yml']
-
-    guzzle_http_service:
-      check:
-        requestOrUrl: "google.com"
-
-    guzzle_http_service(s):
-      items:
-        a:
-          check:
-            requestOrUrl: "google.com"
-        b:
-          check:
-            requestOrUrl: "google.com"
-
-    http_service:
-      check:
-        host: "google.com"
-        #port: 80
-        #path: "/"
-        #statusCode: ~
-        #content: null
-
-    http_service(s):
-      items:
-        a:
-          check:
-            host: "google.com"
-
-    memcache:
-      check:
-      #host: default '127.0.0.1'
-      #port: default 11211
-
-    memcache(s):
-      items:
-        a:
-          check:
-            host: '127.0.0.1'
-            port: 11211
-        b:
-          check:
-            host: 'localhost'
-            port: 11211
-
-    memcached:
-      check:
-      #host: default '127.0.0.1'
-      #port: default 11211
-
-    memcached(s):
-      items:
-        a:
-          check:
-            host: '127.0.0.1'
-            port: 11211
-        b:
-          check:
-            host: 'localhost'
-            port: 11211
-
-    mongo:
-      check:
-        connectionUri:  default 'mongodb://127.0.0.1/'
-
-    mongo(s):
-      items:
-        a:
-          check:
-            connectionUri: 'mongodb://127.0.0.1/'
-        b:
-          check:
-            connectionUri: 'mongodb://localhost/'
-
-    apc_fragmentation:
-      check:
-      #warningThreshold: 70
-      #criticalThreshold: 90
-
-    apc_fragmentation(s):
-      items:
-        a:
-          check:
-            warningThreshold: 70
-            criticalThreshold: 90
-        b:
-          check:
-            warningThreshold: 70
-            criticalThreshold: 90
-
-    apc_memory:
-      check:
-        warningThreshold: 70
-        criticalThreshold: 90
-
-    apc_memory(s):
-      items:
-        a:
-          check:
-            warningThreshold: 70
-            criticalThreshold: 90
-        b:
-          check:
-            warningThreshold: 70
-            criticalThreshold: 90
-
-    class_exists:
-      check:
-        classNames: ['\Tvi\MonitorBundle\Check\ClassExists\Check']
-        autoload: true
-
-    class_exists(s):
-      items:
-        a:
-          check:
-            classNames: '\Tvi\MonitorBundle\Check\ClassExists\Check'
-            autoload: false
-        b:
-          check:
-            classNames: ['\Tvi\MonitorBundle\Check\ClassExists\Check']
-
-    extension_loaded:
-      check:
-        extensionName: ['apc']
-
-    extension_loaded(s):
-      items:
-        a:
-          check:
-            extensionName: ['apc']
-        b:
-          check:
-            extensionName: 'apc'
-
-    extension_not_loaded:
-      check:
-        extensionName: ["xdebug"]
-
-    extension_not_loaded(s):
-      items:
-        a:
-          check:
-            extensionName: ["xdebug"]
-        b:
-          check:
-            extensionName: "xdebug"
-
-    op_cache_memory:
-      check:
-      #warningThreshold: 70
-      #criticalThreshold: 90
-
-    op_cache_memory(s):
-      items:
-        a:
-          check:
-            warningThreshold: 70
-            criticalThreshold: 90
-        b:
-          check:
-            warningThreshold: 70
-            criticalThreshold: 90
-
-    php_flag:
-      check:
-        settingName: ["session.use_only_cookies"]
-        expectedValue: true
-
-    php_flag(s):
-      items:
-        a:
-          check:
-            settingName: "session.use_only_cookies"
-            expectedValue: true
-        b:
-          check:
-            settingName: ["session.use_only_cookies"]
-            expectedValue: true
-
-    php_version:
-      check:
-        expectedVersion: "7.0"
-        operator: ">="
-
-    php_version(s):
-      items:
-        a:
-          check:
-            expectedVersion: "7.0"
-            operator: ">="
-        b:
-          check:
-            expectedVersion: "7.0"
-
-    security_advisory:
-      tags: ["security"]
-      check:
-        lockFilePath: "%kernel.root_dir%/../composer.lock"
-
-    security_advisory(s):
-      tags: ["security"]
-      items:
-        a:
-          check:
-            lockFilePath: "../../../../composer.lock"
-        b:
-          check:
-            lockFilePath: "../../../../composer.lock"
-
-    stream_wrapper_exists:
-      check:
-        wrappers: ["zlib", "bzip2", "zip"]
-
-    stream_wrapper_exists(s):
-      items:
-        a:
-          check:
-            wrappers: ["zlib"]
-        b:
-          check:
-            wrappers: "zlib"
-
-    rabbit_mq:
-      check:
-      #host: 'localhost'
-      #port: 5672
-      #user: 'guest'
-      #password: 'guest'
-      #vhost: '/'
-
-    rabbit_mq(s):
-      items:
-        a:
-          check:
-        b:
-          check:
-
-    redis:
-      check:
-      #host: default 'localhost'
-      #port: default 6379
-      #auth:  default null
-
-    redis(s):
-      items:
-        a:
-          check:
-        b:
-          check:
-
-    cpu_performance:
-      check:
-
-    cpu_performance(s):
-      items:
-        a:
-          check:
-            minPerformance: 1
-        b:
-          check:
-
-    process_running:
-      check:
-        processNameOrPid: "php"
-
-    process_running(s):
-      items:
-        a:
-          check:
-            processNameOrPid: "nginx"
-        b:
-          check:
-            processNameOrPid: 1
+#    core:ini_file(s):
+#      items:
+#        a:
+#          check:
+#            files: '/tmp/test.ini'
+#        b:
+#          check:
+#            files: ['/tmp/test.ini']
+#
+#    core:json_file:
+#      check:
+#        files: '/tmp/test.json'
+#
+#    core:json_file(s):
+#      items:
+#        a:
+#          check:
+#            files: '/tmp/test.json'
+#        b:
+#          check:
+#            files: ['/tmp/test.json']
+#
+#    core:xml_file:
+#      check:
+#        files: '/tmp/test.xml'
+#
+#    core:xml_file(s):
+#      items:
+#        a:
+#          check:
+#            files: '/tmp/test.xml'
+#        b:
+#          check:
+#            files: ['/tmp/test.xml']
+#
+#    core:yaml_file:
+#      check:
+#        files: '/tmp/test.yml'
+#
+#    core:yaml_file(s):
+#      items:
+#        a:
+#          check:
+#            files: '/tmp/test.yml'
+#        b:
+#          check:
+#            files: ['/tmp/test.yml']
+#
+#    core:guzzle_http_service:
+#      check:
+#        requestOrUrl: "google.com"
+#
+#    core:guzzle_http_service(s):
+#      items:
+#        a:
+#          check:
+#            requestOrUrl: "google.com"
+#        b:
+#          check:
+#            requestOrUrl: "google.com"
+#
+#    core:http_service:
+#      check:
+#        host: "google.com"
+#        #port: 80
+#        #path: "/"
+#        #statusCode: ~
+#        #content: null
+#
+#    core:http_service(s):
+#      items:
+#        a:
+#          check:
+#            host: "google.com"
+#
+#    core:memcache:
+#      check:
+#      #host: default '127.0.0.1'
+#      #port: default 11211
+#
+#    core:memcache(s):
+#      items:
+#        a:
+#          check:
+#            host: '127.0.0.1'
+#            port: 11211
+#        b:
+#          check:
+#            host: 'localhost'
+#            port: 11211
+#
+#    core:memcached:
+#      check:
+#      #host: default '127.0.0.1'
+#      #port: default 11211
+#
+#    core:memcached(s):
+#      items:
+#        a:
+#          check:
+#            host: '127.0.0.1'
+#            port: 11211
+#        b:
+#          check:
+#            host: 'localhost'
+#            port: 11211
+#
+#    core:mongo:
+#      check:
+#        connectionUri:  default 'mongodb://127.0.0.1/'
+#
+#    core:mongo(s):
+#      items:
+#        a:
+#          check:
+#            connectionUri: 'mongodb://127.0.0.1/'
+#        b:
+#          check:
+#            connectionUri: 'mongodb://localhost/'
+#
+#    core:apc_fragmentation:
+#      check:
+#      #warningThreshold: 70
+#      #criticalThreshold: 90
+#
+#    core:apc_fragmentation(s):
+#      items:
+#        a:
+#          check:
+#            warningThreshold: 70
+#            criticalThreshold: 90
+#        b:
+#          check:
+#            warningThreshold: 70
+#            criticalThreshold: 90
+#
+#    core:apc_memory:
+#      check:
+#        warningThreshold: 70
+#        criticalThreshold: 90
+#
+#    core:apc_memory(s):
+#      items:
+#        a:
+#          check:
+#            warningThreshold: 70
+#            criticalThreshold: 90
+#        b:
+#          check:
+#            warningThreshold: 70
+#            criticalThreshold: 90
+#
+#    core:class_exists:
+#      check:
+#        classNames: ['\Tvi\MonitorBundle\Check\ClassExists\Check']
+#        autoload: true
+#
+#    core:class_exists(s):
+#      items:
+#        a:
+#          check:
+#            classNames: '\Tvi\MonitorBundle\Check\ClassExists\Check'
+#            autoload: false
+#        b:
+#          check:
+#            classNames: ['\Tvi\MonitorBundle\Check\ClassExists\Check']
+#
+#    core:extension_loaded:
+#      check:
+#        extensionName: ['apc']
+#
+#    core:extension_loaded(s):
+#      items:
+#        a:
+#          check:
+#            extensionName: ['apc']
+#        b:
+#          check:
+#            extensionName: 'apc'
+#
+#    core:extension_not_loaded:
+#      check:
+#        extensionName: ["xdebug"]
+#
+#    core:extension_not_loaded(s):
+#      items:
+#        a:
+#          check:
+#            extensionName: ["xdebug"]
+#        b:
+#          check:
+#            extensionName: "xdebug"
+#
+#    core:op_cache_memory:
+#      check:
+#      #warningThreshold: 70
+#      #criticalThreshold: 90
+#
+#    core:op_cache_memory(s):
+#      items:
+#        a:
+#          check:
+#            warningThreshold: 70
+#            criticalThreshold: 90
+#        b:
+#          check:
+#            warningThreshold: 70
+#            criticalThreshold: 90
+#
+#    core:php_flag:
+#      check:
+#        settingName: ["session.use_only_cookies"]
+#        expectedValue: true
+#
+#    core:php_flag(s):
+#      items:
+#        a:
+#          check:
+#            settingName: "session.use_only_cookies"
+#            expectedValue: true
+#        b:
+#          check:
+#            settingName: ["session.use_only_cookies"]
+#            expectedValue: true
+#
+#    core:php_version:
+#      check:
+#        expectedVersion: "7.0"
+#        operator: ">="
+#
+#    core:php_version(s):
+#      items:
+#        a:
+#          check:
+#            expectedVersion: "7.0"
+#            operator: ">="
+#        b:
+#          check:
+#            expectedVersion: "7.0"
+#
+#    core:security_advisory:
+#      tags: ["security"]
+#      check:
+#        lockFilePath: "%kernel.root_dir%/../composer.lock"
+#
+#    core:security_advisory(s):
+#      tags: ["security"]
+#      items:
+#        a:
+#          check:
+#        b:
+#          check:
+#            lockFilePath: "composer.lock"
+#
+#    core:stream_wrapper_exists:
+#      check:
+#        wrappers: ["zlib", "bzip2", "zip"]
+#
+#    core:stream_wrapper_exists(s):
+#      items:
+#        a:
+#          check:
+#            wrappers: ["bzip"]
+#        b:
+#          check:
+#            wrappers: "zlib"
+#
+#    core:rabbit_mq:
+#      check:
+#      #host: 'localhost'
+#      #port: 5672
+#      #user: 'guest'
+#      #password: 'guest'
+#      #vhost: '/'
+#
+#    core:rabbit_mq(s):
+#      items:
+#        a:
+#          check:
+#        b:
+#          check:
+#
+#    core:redis:
+#      check:
+#      #host: default 'localhost'
+#      #port: default 6379
+#      #auth:  default null
+#
+#    core:redis(s):
+#      items:
+#        a:
+#          check:
+#        b:
+#          check:
+#
+#    core:cpu_performance:
+#      check:
+#
+#    core:cpu_performance(s):
+#      items:
+#        a:
+#          check:
+#            minPerformance: 1
+#        b:
+#          check:
+#
+#    core:process_running:
+#      check:
+#        processNameOrPid: "php"
+#
+#    core:process_running(s):
+#      items:
+#        a:
+#          check:
+#            processNameOrPid: "nginx"
+#        b:
+#          check:
+#            processNameOrPid: 1
