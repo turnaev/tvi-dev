@@ -1,5 +1,42 @@
 tvi_monitor:
   checks:
+#    core:php_version:
+#      group: test
+#      tags: [test]
+#      descr: test
+#      label: "ssssssss"
+#      check:
+#        expectedVersion: "7.0"
+#        operator: ">="
+#
+#    core:php_version(s):
+#      items:
+#        a:
+#          check:
+#            expectedVersion: "7.0"
+#            operator: ">="
+#        b:
+#          check:
+#            expectedVersion: "7.0"
+#
+#    core:php_flag:
+#      check:
+#        settingName: ["session.use_only_cookies"]
+#        expectedValue: true
+#
+#    core:php_flag(s):
+#      items:
+#        a:
+#          check:
+#            settingName: "session.use_only_cookies"
+#            expectedValue: true
+#        b:
+#          check:
+#            settingName: ["session.use_only_cookies"]
+#            expectedValue: true
+
+
+
     core:pdo_check:
       check:
         dsn: "mysql:host=localhost;dbname=testdb"
@@ -325,6 +362,9 @@ tvi_monitor:
             expectedValue: true
 
     core:php_version:
+      group: test
+      tags: [test]
+      descr: test
       check:
         expectedVersion: "7.0"
         operator: ">="
