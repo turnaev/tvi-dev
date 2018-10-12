@@ -344,13 +344,18 @@ tvi_monitor:
           check:
             warningThreshold: 70
             criticalThreshold: 90
-
+#  //'EMERGENCY'
+#  //'WARNING'
+#  //'NOTE'
+#  //'INFO'
     core:php_flag:
+      importance: EMERGENCY
       check:
         settingName: ["session.use_only_cookies"]
         expectedValue: true
 
     core:php_flag(s):
+      importance: WARNING
       items:
         a:
           check:
@@ -365,11 +370,13 @@ tvi_monitor:
       group: test
       tags: [test]
       descr: test
+      importance: NOTE
       check:
         expectedVersion: "7.0"
         operator: ">="
 
     core:php_version(s):
+      importance: INFO
       items:
         a:
           check:
