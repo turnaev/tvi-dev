@@ -27,7 +27,8 @@
         "symfony/web-link": "*",
         "symfony/yaml": "*",
         "textalk/websocket": "*",
-        "tvi/monitor-bundle": "dev-master"
+        "tvi/monitor-bundle": "dev-master",
+        "php-amqplib/php-amqplib": "*"
     },
     "require-dev": {
         "symfony/debug-pack": "*",

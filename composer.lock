@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "72f948922fb1bd7956c0ff8038bb22c6",
+    "content-hash": "11355662225f4da1f3267e766018df3b",
     "packages": [
         {
             "name": "composer/ca-bundle",
-            "version": "1.1.2",
+            "version": "1.1.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/ca-bundle.git",
-                "reference": "46afded9720f40b9dc63542af4e3e43a1177acb0"
+                "reference": "8afa52cd417f4ec417b4bfe86b68106538a87660"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/ca-bundle/zipball/46afded9720f40b9dc63542af4e3e43a1177acb0",
-                "reference": "46afded9720f40b9dc63542af4e3e43a1177acb0",
+                "url": "https://api.github.com/repos/composer/ca-bundle/zipball/8afa52cd417f4ec417b4bfe86b68106538a87660",
+                "reference": "8afa52cd417f4ec417b4bfe86b68106538a87660",
                 "shasum": ""
             },
             "require": {
@@ -60,7 +60,7 @@
                 "ssl",
                 "tls"
             ],
-            "time": "2018-08-08T08:57:40+00:00"
+            "time": "2018-10-18T06:09:13+00:00"
         },
         {
             "name": "doctrine/annotations",
@@ -2010,6 +2010,77 @@
             "time": "2018-09-27T13:45:01+00:00"
         },
         {
+            "name": "php-amqplib/php-amqplib",
+            "version": "v2.7.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-amqplib/php-amqplib.git",
+                "reference": "a8ba54bd35b973fc6861e4c2e105f71e9e95f43f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-amqplib/php-amqplib/zipball/a8ba54bd35b973fc6861e4c2e105f71e9e95f43f",
+                "reference": "a8ba54bd35b973fc6861e4c2e105f71e9e95f43f",
+                "shasum": ""
+            },
+            "require": {
+                "ext-bcmath": "*",
+                "ext-mbstring": "*",
+                "php": ">=5.3.0"
+            },
+            "replace": {
+                "videlalvaro/php-amqplib": "self.version"
+            },
+            "require-dev": {
+                "phpdocumentor/phpdocumentor": "^2.9",
+                "phpunit/phpunit": "^4.8",
+                "scrutinizer/ocular": "^1.1",
+                "squizlabs/php_codesniffer": "^2.5"
+            },
+            "suggest": {
+                "ext-sockets": "Use AMQPSocketConnection"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.7-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "PhpAmqpLib\\": "PhpAmqpLib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-2.1-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Alvaro Videla",
+                    "role": "Original Maintainer"
+                },
+                {
+                    "name": "John Kelly",
+                    "email": "johnmkelly86@gmail.com",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "Raúl Araya",
+                    "email": "nubeiro@gmail.com",
+                    "role": "Maintainer"
+                }
+            ],
+            "description": "Formerly videlalvaro/php-amqplib.  This library is a pure PHP implementation of the AMQP protocol. It's been tested against RabbitMQ.",
+            "homepage": "https://github.com/php-amqplib/php-amqplib/",
+            "keywords": [
+                "message",
+                "queue",
+                "rabbitmq"
+            ],
+            "time": "2018-04-30T03:54:54+00:00"
+        },
+        {
             "name": "phpcollection/phpcollection",
             "version": "0.5.0",
             "source": {
@@ -2671,16 +2742,16 @@
         },
         {
             "name": "sensiolabs/security-checker",
-            "version": "v5.0.0",
+            "version": "v5.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sensiolabs/security-checker.git",
-                "reference": "df4625e39868ecf4e868355caf45352f566791db"
+                "reference": "9ea927417c949039a9cfb0d92af76fd1c538d9e9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sensiolabs/security-checker/zipball/df4625e39868ecf4e868355caf45352f566791db",
-                "reference": "df4625e39868ecf4e868355caf45352f566791db",
+                "url": "https://api.github.com/repos/sensiolabs/security-checker/zipball/9ea927417c949039a9cfb0d92af76fd1c538d9e9",
+                "reference": "9ea927417c949039a9cfb0d92af76fd1c538d9e9",
                 "shasum": ""
             },
             "require": {
@@ -2713,7 +2784,7 @@
                 }
             ],
             "description": "A security checker for your composer.lock",
-            "time": "2018-09-04T07:02:17+00:00"
+            "time": "2018-10-16T10:30:44+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -5390,27 +5461,29 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/turnaev/monitor-bundle.git",
-                "reference": "8cfc77191cc58a4a0c4628da441132bd11bf5f26"
+                "reference": "f78d72dbcaf1de0a4e9fbc4d86bb9ce913ecc00e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/turnaev/monitor-bundle/zipball/8cfc77191cc58a4a0c4628da441132bd11bf5f26",
-                "reference": "8cfc77191cc58a4a0c4628da441132bd11bf5f26",
+                "url": "https://api.github.com/repos/turnaev/monitor-bundle/zipball/f78d72dbcaf1de0a4e9fbc4d86bb9ce913ecc00e",
+                "reference": "f78d72dbcaf1de0a4e9fbc4d86bb9ce913ecc00e",
                 "shasum": ""
             },
             "require": {
-                "php": "^7.1",
+                "jms/serializer-bundle": "~2.4",
+                "php": "^7.0",
                 "symfony/framework-bundle": "~2|~3|^4",
                 "zendframework/zenddiagnostics": "^1.3"
             },
             "require-dev": {
                 "guzzlehttp/guzzle": "~5|~6",
-                "jms/serializer-bundle": "*",
                 "matthiasnoback/symfony-dependency-injection-test": "~2|~3",
+                "php-amqplib/php-amqplib": "*",
                 "phpunit/phpunit": "~6",
                 "predis/predis": "~1",
                 "sensiolabs/security-checker": "~2|~3|~4",
                 "swiftmailer/swiftmailer": "~5|~6",
+                "symfony/asset": "~2|~3|~4",
                 "symfony/browser-kit": "~2|~3|^4",
                 "symfony/expression-language": "~2|~3|^4",
                 "symfony/templating": "~2|~3|^4",
@@ -5418,10 +5491,12 @@
                 "symfony/var-dumper": "~2|~3|~4"
             },
             "suggest": {
+                "apache/thrift": "To use Thrift check(s)",
                 "guzzlehttp/guzzle": "To use Http check(s)",
+                "php-amqplib/php-amqplib": "Required by Check\\RabbitMQ",
                 "sensiolabs/security-checker": "To use Security check(s)",
                 "symfony/expression-language": "To use Expression check(s)",
-                "symfony/twig-bundle": "To use Code generator",
+                "symfony/twig-bundle": "To use code generator",
                 "textalk/websocket": "To use WebSocket check(s)"
             },
             "type": "symfony-plugin",
@@ -5453,7 +5528,7 @@
                 "monitor",
                 "monitoring"
             ],
-            "time": "2018-10-08T07:36:44+00:00"
+            "time": "2018-10-19T12:28:15+00:00"
         },
         {
             "name": "twig/twig",
@@ -5798,16 +5873,16 @@
         },
         {
             "name": "nikic/php-parser",
-            "version": "v4.0.4",
+            "version": "v4.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nikic/PHP-Parser.git",
-                "reference": "fa6ee28600d21d49b2b4e1006b48426cec8e579c"
+                "reference": "d0230c5c77a7e3cfa69446febf340978540958c0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/fa6ee28600d21d49b2b4e1006b48426cec8e579c",
-                "reference": "fa6ee28600d21d49b2b4e1006b48426cec8e579c",
+                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/d0230c5c77a7e3cfa69446febf340978540958c0",
+                "reference": "d0230c5c77a7e3cfa69446febf340978540958c0",
                 "shasum": ""
             },
             "require": {
@@ -5823,7 +5898,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "4.0-dev"
+                    "dev-master": "4.1-dev"
                 }
             },
             "autoload": {
@@ -5845,7 +5920,7 @@
                 "parser",
                 "php"
             ],
-            "time": "2018-09-18T07:03:24+00:00"
+            "time": "2018-10-10T09:24:14+00:00"
         },
         {
             "name": "symfony/browser-kit",
@@ -6168,16 +6243,16 @@
         },
         {
             "name": "symfony/maker-bundle",
-            "version": "v1.7.0",
+            "version": "v1.8.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/maker-bundle.git",
-                "reference": "22a9bf33868f0fed6cab013fe5231e8485d15e20"
+                "reference": "26643943fe19b5b47d620744907f09d1d6b3f06f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/maker-bundle/zipball/22a9bf33868f0fed6cab013fe5231e8485d15e20",
-                "reference": "22a9bf33868f0fed6cab013fe5231e8485d15e20",
+                "url": "https://api.github.com/repos/symfony/maker-bundle/zipball/26643943fe19b5b47d620744907f09d1d6b3f06f",
+                "reference": "26643943fe19b5b47d620744907f09d1d6b3f06f",
                 "shasum": ""
             },
             "require": {
@@ -6230,7 +6305,7 @@
                 "scaffold",
                 "scaffolding"
             ],
-            "time": "2018-08-30T01:08:06+00:00"
+            "time": "2018-10-13T19:56:32+00:00"
         },
         {
             "name": "symfony/phpunit-bridge",
