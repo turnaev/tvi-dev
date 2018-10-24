@@ -29,3 +29,12 @@ services:
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
+#
+#    common.supervisor.manager.checks.plugin_search_path:
+#        public: true
+#        class: Tvi\MonitorBundle\Check\CheckPluginFinderPath
+#        arguments:
+#            - "@=parameter('kernel.bundles_metadata')['CommonSupervisorBundle']['path']"
+#            - ['Check/**']
+#        tags:
+#            - {name: tvi_monitor.plugin_search_path}
